@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendendo vue.js</title>
+
+  <!-- Importando css -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="nav-bar"></div>
+
+  <div id="app">
+    <div class="product">
+      <div class="product-image">
+        <img :src="image" />
+      </div>
+      <div class="product-info">
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+        <a :href="link" target="_blank">Clique aqui para comprar</a>
+        <p v-if="inStock">Em estoque</p>
+        <p v-else :class="{ tex: !inStock}">Fora de estoque</p>
+        <h3>{{ sale }}</h3>
+
+        <ul>
+          <li v-for="detail in details">{{ detail }}</li>
+        </ul>
+
+        <h4>tamanhos:</h4>
+        <ul>
+          <li v-for="size in sizes">{{ size }}</li>
+        </ul>
+        <h4>Cores:</h4>
+
+        <div v-for="(variant, index) in variants" :key="variant.color" class="color-box"
+          :style="{ backgroundColor: variant.color }" @mouseover="updateProduct(index)">
+        </div>
+
+        <button v-on:click="addToCart" :disable="!inStock" :class="{ disabledButton: !inStock}">Adicione ao
+          carrinho</button>
+        <button v-on:click="removeFromCart" :disable="!inStock" :class="{ disabledButton: !inStock}">Remover do
+          carrinho</button>
+
+        <div class="cart">
+          <p>Carrinho({{cart}})</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Import do Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!-- importe do main.js -->
+  <script src="./js/teste.js"></script>
+
+</body>
+
+</html>

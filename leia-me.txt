@@ -1,0 +1,11 @@
+Aprendendo vue.js 2021
+
+Comandos:
+
+v-input:on (substitui por @)
+v-bind  (substitui por :)
+v-once executa um comando uma única vez
+v-on - onclick, etc
+v-on:click.preventDefault
+v-on:click.enter - mapeia a tecla enter. Pode ser v-on:click.A se apertar o A
+v-html para não interpolar códigos html

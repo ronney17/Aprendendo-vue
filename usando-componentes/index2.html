@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendendo vue.js - Componentes</title>
+
+  <!-- Importando css -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="nav-bar"></div>
+
+  <div id="app">
+
+    <div class="boxArea">
+      <product :premium="premium" @add-to-cart="updateCart" @remove-of-cart="removeCart"></product>
+
+      <div class="cart">
+        <p>Carrinho ({{cart.length}})</p>
+      </div>
+    </div>
+
+    <div class="boxArea">
+      <product :premium="premium" @add-to-cart="updateCart" @remove-of-cart="removeCart"></product>
+
+      <div class="cart">
+        <p>Carrinho ({{cart.length}})</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Import do Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!-- importe do main.js -->
+  <script src="./js/teste2.js"></script>
+
+</body>
+
+</html>
